@@ -379,6 +379,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mathBomb/mathBomb-Prefix.pch";
 				INFOPLIST_FILE = "mathBomb/mathBomb-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +393,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mathBomb/mathBomb-Prefix.pch";
 				INFOPLIST_FILE = "mathBomb/mathBomb-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -456,6 +458,7 @@
 				9CA9FB341975ECCB00C540D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9CA9FB351975ECCB00C540D4 /* Build configuration list for PBXNativeTarget "mathBombTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +467,7 @@
 				9CA9FB371975ECCB00C540D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
