@@ -21,6 +21,9 @@
 		9CA9FB251975ECCB00C540D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB071975ECCA00C540D4 /* UIKit.framework */; };
 		9CA9FB2D1975ECCB00C540D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9FB2B1975ECCB00C540D4 /* InfoPlist.strings */; };
 		9CA9FB2F1975ECCB00C540D4 /* mathBombTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9FB2E1975ECCB00C540D4 /* mathBombTests.m */; };
+		9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CB6967219760D3C0066C15D /* explosion.mp3 */; };
+		9CB6967519760D5E0066C15D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967419760D5E0066C15D /* AVFoundation.framework */; };
+		9CB6967719760D6E0066C15D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967619760D6E0066C15D /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		9CA9FB2A1975ECCB00C540D4 /* mathBombTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mathBombTests-Info.plist"; sourceTree = "<group>"; };
 		9CA9FB2C1975ECCB00C540D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CA9FB2E1975ECCB00C540D4 /* mathBombTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mathBombTests.m; sourceTree = "<group>"; };
+		9CB6967219760D3C0066C15D /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
+		9CB6967419760D5E0066C15D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9CB6967619760D6E0066C15D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB6967719760D6E0066C15D /* AudioToolbox.framework in Frameworks */,
+				9CB6967519760D5E0066C15D /* AVFoundation.framework in Frameworks */,
 				9CA9FB061975ECCA00C540D4 /* CoreGraphics.framework in Frameworks */,
 				9CA9FB081975ECCA00C540D4 /* UIKit.framework in Frameworks */,
 				9CA9FB041975ECCA00C540D4 /* Foundation.framework in Frameworks */,
@@ -101,6 +109,8 @@
 		9CA9FB021975ECCA00C540D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CB6967619760D6E0066C15D /* AudioToolbox.framework */,
+				9CB6967419760D5E0066C15D /* AVFoundation.framework */,
 				9CA9FB031975ECCA00C540D4 /* Foundation.framework */,
 				9CA9FB051975ECCA00C540D4 /* CoreGraphics.framework */,
 				9CA9FB071975ECCA00C540D4 /* UIKit.framework */,
@@ -126,6 +136,7 @@
 		9CA9FB0A1975ECCA00C540D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9CB6967219760D3C0066C15D /* explosion.mp3 */,
 				9CA9FB0B1975ECCA00C540D4 /* mathBomb-Info.plist */,
 				9CA9FB0C1975ECCA00C540D4 /* InfoPlist.strings */,
 				9CA9FB0F1975ECCA00C540D4 /* main.m */,
@@ -228,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */,
 				9CA9FB1C1975ECCB00C540D4 /* Images.xcassets in Resources */,
 				9CA9FB0E1975ECCA00C540D4 /* InfoPlist.strings in Resources */,
 				9CA9FB171975ECCB00C540D4 /* Main.storyboard in Resources */,
