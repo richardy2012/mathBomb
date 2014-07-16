@@ -24,6 +24,8 @@
 		9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CB6967219760D3C0066C15D /* explosion.mp3 */; };
 		9CB6967519760D5E0066C15D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967419760D5E0066C15D /* AVFoundation.framework */; };
 		9CB6967719760D6E0066C15D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967619760D6E0066C15D /* AudioToolbox.framework */; };
+		9CB6967D1976386A0066C15D /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6967C1976386A0066C15D /* Game.m */; };
+		9CB6968319763BD60066C15D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB6968219763BD60066C15D /* Settings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,10 @@
 		9CB6967219760D3C0066C15D /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		9CB6967419760D5E0066C15D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9CB6967619760D6E0066C15D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9CB6967B1976386A0066C15D /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		9CB6967C1976386A0066C15D /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		9CB6968119763BD60066C15D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		9CB6968219763BD60066C15D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,10 @@
 				9CA9FB121975ECCB00C540D4 /* AppDelegate.h */,
 				9CA9FB131975ECCB00C540D4 /* AppDelegate.m */,
 				9CA9FB151975ECCB00C540D4 /* Main.storyboard */,
+				9CB6967B1976386A0066C15D /* Game.h */,
+				9CB6967C1976386A0066C15D /* Game.m */,
+				9CB6968119763BD60066C15D /* Settings.h */,
+				9CB6968219763BD60066C15D /* Settings.m */,
 				9CA9FB181975ECCB00C540D4 /* ViewController.h */,
 				9CA9FB191975ECCB00C540D4 /* ViewController.m */,
 				9CA9FB1B1975ECCB00C540D4 /* Images.xcassets */,
@@ -263,7 +273,9 @@
 			files = (
 				9CA9FB1A1975ECCB00C540D4 /* ViewController.m in Sources */,
 				9CA9FB141975ECCB00C540D4 /* AppDelegate.m in Sources */,
+				9CB6968319763BD60066C15D /* Settings.m in Sources */,
 				9CA9FB101975ECCA00C540D4 /* main.m in Sources */,
+				9CB6967D1976386A0066C15D /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

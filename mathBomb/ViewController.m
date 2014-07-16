@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+
+
 #define SIZE 250
 #define DURATION 0.1f
 #define YSEED 100
@@ -23,6 +25,9 @@
 @synthesize explosionCounter;
 @synthesize explosionImages;
 @synthesize question1,question2,mathOperator,answer1,answer2,answer3,answer4,progressBar;
+@synthesize startOutlet;
+@synthesize gameLevel;
+@synthesize game,settings;
 
 
 #pragma mark - View Initialization
@@ -35,15 +40,32 @@
     
     // alpha zero to everyone
     [self hideControls];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     // Animate initial scene
-    [self initialSceneAnimation];
+//    [self initialSceneAnimation];
     
 }
+
+#pragma mark - UI Actions
+- (IBAction)start:(id)sender {
+    
+    // Hide start outlet
+    self.startOutlet.hidden=YES;
+    
+    // Get game settings
+    self.game=[self.settings getGame];
+    NSLog(@"level=%d  score=%d",self.game.level,self.game.score);
+    
+    [self generateRandomValues];
+    
+    
+}
+
 
 
 #pragma mark - Working Methods
@@ -62,7 +84,6 @@
     }
 }
 
-#pragma mark - Working Methods
 -(void) hideControls
 {
     self.question1.alpha=0;
@@ -139,6 +160,13 @@
     self.explosionCounter++;
     
 }
+
+#pragma mark - Number Generation
+-(void)generateRandomValues {
+    
+}
+
+
 
 #pragma mark - Sound Effects
 -(void)playExplosionSound {

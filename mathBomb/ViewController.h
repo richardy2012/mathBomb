@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import<AVFoundation/AVFoundation.h>
+#import "Game.h"
+#import "Settings.h"
 
 @interface ViewController : UIViewController
 {
@@ -23,12 +25,20 @@
 @property (weak, nonatomic) IBOutlet UIButton *answer3;
 @property (weak, nonatomic) IBOutlet UIButton *answer4;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIButton *startOutlet;
 
-
+// Level of the game (starting from 1)
+@property int gameLevel;
 
 @property(strong,nonatomic)NSTimer *timer;
 
 @property(strong,nonatomic)NSMutableArray *explosionImages;
 @property int explosionCounter;
+
+// Game Properties
+@property (nonatomic,strong) Game *game;
+
+// Settings
+@property (nonatomic,strong) Settings *settings;
 
 @end
