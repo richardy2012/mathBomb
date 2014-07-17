@@ -11,7 +11,7 @@
 
 #define SIZE 250
 #define DURATION 0.1f
-#define YSEED 100
+#define YSEED -70
 #define IMAGE_TOTAL 18
 
 @interface ViewController ()
@@ -40,6 +40,7 @@
     
     // alpha zero to everyone
     [self hideControls];
+
     
 }
 
@@ -125,7 +126,7 @@
 
 
 
-
+#pragma mark - Explosion Methods
 -(void)startExplosion
 {
     self.timer=[NSTimer scheduledTimerWithTimeInterval:DURATION target:self selector:@selector(explosion) userInfo:nil repeats:YES];
