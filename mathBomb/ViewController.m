@@ -14,6 +14,8 @@
 #define YSEED -70
 #define IMAGE_TOTAL 18
 
+
+
 @interface ViewController ()
 
 
@@ -38,10 +40,18 @@
     // load images to be used in the explosion
     [self loadExplosionImages];
     
-    // alpha zero to everyone
+    // zero alpha to everyone
     [self hideControls];
-
     
+    // Init Game and Settings
+    self.game=[[Game alloc]init];
+    self.settings=[[Settings alloc]init];
+
+//    self.game=[self.settings getGame];
+//    NSLog(@"level=%d",self.game.level);
+//    NSLog(@"score=%d",self.game.score);
+//
+//    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -164,6 +174,8 @@
 
 #pragma mark - Number Generation
 -(void)generateRandomValues {
+    // Question 1
+
     
 }
 

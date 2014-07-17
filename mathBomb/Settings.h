@@ -17,5 +17,8 @@
 
 
 -(Game *)getGame;
+-(void)updateGameWithScore:(int)score;
+-(void)updateGameWithLevel:(int)level;
+-(void)updateGameWithObject:(Game *)game;
 
 @end

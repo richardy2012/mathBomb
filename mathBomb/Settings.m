@@ -18,6 +18,7 @@
 @synthesize game;
 
 
+#pragma mark - Game Methods
 -(Game *)getGame {
     
     self.game=[[Game alloc]init];
@@ -33,7 +34,7 @@
         self.game.score=[gameScore intValue];
     } else {
         // Create User Defaults Object
-        self.game=[[Game alloc]initWithLevel:0 score:0];
+        self.game=[[Game alloc]initWithLevel:1 score:0];
         // Store Object
         [self addGameWithObject:self.game];
     }
@@ -57,6 +58,26 @@
  
 }
 
-
+-(void)updateGameWithScore:(int)score
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%d",score] forKeyPath:GAME_SCORE];
+    [defaults synchronize];
+}
+-(void)updateGameWithLevel:(int)level
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%d",level] forKeyPath:GAME_LEVEL];
+    [defaults synchronize];
+    
+}
+-(void)updateGameWithObject:(Game *)game
+{
+    self.game=[[Game alloc]init];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[NSString stringWithFormat:@"%d",self.game.level] forKeyPath:GAME_LEVEL];
+    [defaults setValue:[NSString stringWithFormat:@"%d",self.game.score] forKeyPath:GAME_SCORE];
+    [defaults synchronize];
+}
 
 @end
