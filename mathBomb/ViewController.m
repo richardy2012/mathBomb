@@ -125,7 +125,6 @@
                 self.answer2.alpha=1;
                 self.answer3.alpha=1;
                 self.answer4.alpha=1;
-
             } completion:^(BOOL finished) {
                 NSLog(@"completion");
             }];
