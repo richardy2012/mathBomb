@@ -8,14 +8,6 @@
 
 #import "ViewController.h"
 
-
-#define SIZE 250
-#define DURATION 0.1f
-#define YSEED -70
-#define IMAGE_TOTAL 18
-
-
-
 @interface ViewController ()
 
 
@@ -36,10 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // load images to be used in the explosion
     [self loadExplosionImages];
-    
+
     // zero alpha to everyone
     [self hideControls];
     

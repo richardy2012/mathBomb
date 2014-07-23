@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Game.h"
 
+// General Settings
+#define SIZE 250
+#define DURATION 0.1f
+#define YSEED -70
+#define IMAGE_TOTAL 18
+#define IS_IPAD_DEVICE                      UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
+
+
+
 @interface Settings : NSObject
 
 
