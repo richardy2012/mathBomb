@@ -14,8 +14,18 @@
 #define DURATION 0.1f
 #define YSEED -70
 #define IMAGE_TOTAL 18
+
+// Device Recognition
 #define IS_IPAD_DEVICE                      UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 
+// Progress Timer
+#define PROGRESS_TIMER_DURATION 0.05
+#define PROGRESS_TIMER_BAR_SEED 0.005
+
+
+// User Defaults
+#define GAME_LEVEL @"gameLevel"
+#define GAME_SCORE @"gameScore"
 
 
 @interface Settings : NSObject

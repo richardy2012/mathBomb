@@ -8,9 +8,7 @@
 
 #import "Settings.h"
 
-// User Defaults
-#define GAME_LEVEL @"gameLevel"
-#define GAME_SCORE @"gameScore"
+
 
 
 @implementation Settings

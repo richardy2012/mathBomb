@@ -31,6 +31,7 @@
 @property int gameLevel;
 
 @property(strong,nonatomic)NSTimer *timer;
+@property(strong,nonatomic)NSTimer  *progressTimer;
 
 @property(strong,nonatomic)NSMutableArray *explosionImages;
 @property int explosionCounter;

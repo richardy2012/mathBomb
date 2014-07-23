@@ -15,7 +15,7 @@
 
 @implementation ViewController
 
-@synthesize timer;
+@synthesize timer,progressTimer;
 @synthesize explosionCounter;
 @synthesize explosionImages;
 @synthesize question1,question2,mathOperator,answer1,answer2,answer3,answer4,progressBar;
@@ -31,18 +31,16 @@
     // load images to be used in the explosion
     [self loadExplosionImages];
 
-    // zero alpha to everyone
+    // Get game settings
+    self.settings=[[Settings alloc]init];
+    self.game=[self.settings getGame];
+
+    // hide all controls
     [self hideControls];
     
-    // Init Game and Settings
-    self.game=[[Game alloc]init];
-    self.settings=[[Settings alloc]init];
-
-//    self.game=[self.settings getGame];
-//    NSLog(@"level=%d",self.game.level);
-//    NSLog(@"score=%d",self.game.score);
-//
-//    
+    // Show up start button
+    self.startOutlet.hidden=NO;
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -59,13 +57,14 @@
     // Hide start outlet
     self.startOutlet.hidden=YES;
     
-    // Get game settings
-    self.game=[self.settings getGame];
-    NSLog(@"level=%d  score=%d",self.game.level,self.game.score);
-    
+    // Generate random numbers
     [self generateRandomValues];
     
+    // Show controls
+    [self showControls];
     
+    // Start up progress timer
+    [self startProgressTimer];
 }
 
 
@@ -98,6 +97,20 @@
     self.progressBar.alpha=0;
 
 }
+
+-(void) showControls
+{
+    self.question1.alpha=1;
+    self.question2.alpha=1;
+    self.mathOperator.alpha=1;
+    self.answer1.alpha=1;
+    self.answer2.alpha=1;
+    self.answer3.alpha=1;
+    self.answer4.alpha=1;
+    self.progressBar.alpha=1;
+    
+}
+
 
 -(void)initialSceneAnimation
 {
@@ -164,11 +177,41 @@
 
 #pragma mark - Number Generation
 -(void)generateRandomValues {
-    // Question 1
 
-    
+    int value=0;
+    int randomNumber=0;
+
+    NSLog(@"generateRandomValues  level=%d",self.game.level);
+
+    if (self.game.level==1) {
+        value=98;
+    } else if (self.game.level==2) {
+        value=998;
+    }
+
+    // Question 1
+    randomNumber=arc4random() % value;
+    self.question1.text=[NSString stringWithFormat:@"%d",randomNumber];
+    // Question 2
+    randomNumber=arc4random() % value;
+    self.question2.text=[NSString stringWithFormat:@"%d",randomNumber];
+
+    // Math Operator
+    if ([self randomOperator]==0) {
+        self.mathOperator.text=@"+";
+    } else if ([self randomOperator]==1) {
+        self.mathOperator.text=@"-";
+    } else if ([self randomOperator]==2) {
+        self.mathOperator.text=@"*";
+    } else if ([self randomOperator]==3) {
+        self.mathOperator.text=@"/";
+    }
 }
 
+-(int)randomOperator
+{
+    return arc4random() % 3;
+}
 
 
 #pragma mark - Sound Effects
@@ -178,12 +221,31 @@
     AudioServicesPlaySystemSound(soundId);
 }
 
-
-#pragma mark - Touch Events
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+#pragma mark - Progress Timer Methods
+-(void)startProgressTimer
 {
-//    self.timer=[NSTimer scheduledTimerWithTimeInterval:DURATION target:self selector:@selector(explosion) userInfo:nil repeats:YES];
+    self.progressTimer=[NSTimer scheduledTimerWithTimeInterval:PROGRESS_TIMER_DURATION target:self selector:@selector(progressTimerPulse) userInfo:nil repeats:YES];
 }
+-(void)progressTimerPulse {
+    if (self.progressBar.progress>=1.00) {
+        [self progressTimerTimeOut];
+        return;
+    }
+    self.progressBar.progress=self.progressBar.progress + PROGRESS_TIMER_BAR_SEED;
+}
+
+-(void)progressTimerTimeOut {
+    [self.progressTimer invalidate];
+    [self hideControls];
+    [self playExplosionSound];
+    [self startExplosion];
+}
+
+//#pragma mark - Touch Events
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//
+//}
 
 
 
