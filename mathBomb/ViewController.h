@@ -25,7 +25,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *answer3;
 @property (weak, nonatomic) IBOutlet UIButton *answer4;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
-@property (weak, nonatomic) IBOutlet UIButton *startOutlet;
+@property (weak, nonatomic) IBOutlet UILabel *separator;
+
+
 
 // Level of the game (starting from 1)
 @property int gameLevel;
@@ -41,5 +43,9 @@
 
 // Settings
 @property (nonatomic,strong) Settings *settings;
+
+// Correct button's position
+@property int correctPosition;
+
 
 @end

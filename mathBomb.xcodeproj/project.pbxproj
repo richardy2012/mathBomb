@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C8EA1AE198066630000DCE4 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA1AD198066630000DCE4 /* InitialViewController.m */; };
 		9CA9FB041975ECCA00C540D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB031975ECCA00C540D4 /* Foundation.framework */; };
 		9CA9FB061975ECCA00C540D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB051975ECCA00C540D4 /* CoreGraphics.framework */; };
 		9CA9FB081975ECCA00C540D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB071975ECCA00C540D4 /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C8EA1AC198066630000DCE4 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		9C8EA1AD198066630000DCE4 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		9CA9FB001975ECCA00C540D4 /* mathBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA9FB031975ECCA00C540D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CA9FB051975ECCA00C540D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -135,6 +138,8 @@
 				9CB6967C1976386A0066C15D /* Game.m */,
 				9CB6968119763BD60066C15D /* Settings.h */,
 				9CB6968219763BD60066C15D /* Settings.m */,
+				9C8EA1AC198066630000DCE4 /* InitialViewController.h */,
+				9C8EA1AD198066630000DCE4 /* InitialViewController.m */,
 				9CA9FB181975ECCB00C540D4 /* ViewController.h */,
 				9CA9FB191975ECCB00C540D4 /* ViewController.m */,
 				9CA9FB1B1975ECCB00C540D4 /* Images.xcassets */,
@@ -274,6 +279,7 @@
 				9CA9FB1A1975ECCB00C540D4 /* ViewController.m in Sources */,
 				9CA9FB141975ECCB00C540D4 /* AppDelegate.m in Sources */,
 				9CB6968319763BD60066C15D /* Settings.m in Sources */,
+				9C8EA1AE198066630000DCE4 /* InitialViewController.m in Sources */,
 				9CA9FB101975ECCA00C540D4 /* main.m in Sources */,
 				9CB6967D1976386A0066C15D /* Game.m in Sources */,
 			);
@@ -400,11 +406,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Humberto Sampaio (WB6FHFDGC3)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mathBomb/mathBomb-Prefix.pch";
 				INFOPLIST_FILE = "mathBomb/mathBomb-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5D83229C-D1A7-4C86-A275-86CA278E354D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -414,11 +422,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Humberto Sampaio (5U294U2N56)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mathBomb/mathBomb-Prefix.pch";
 				INFOPLIST_FILE = "mathBomb/mathBomb-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "B722C5E0-57D5-421A-9570-2FBFEEBDB074";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

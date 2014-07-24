@@ -18,13 +18,14 @@
 @synthesize timer,progressTimer;
 @synthesize explosionCounter;
 @synthesize explosionImages;
-@synthesize question1,question2,mathOperator,answer1,answer2,answer3,answer4,progressBar;
-@synthesize startOutlet;
+@synthesize question1,question2,mathOperator,answer1,answer2,answer3,answer4,progressBar,separator;
+
 @synthesize gameLevel;
 @synthesize game,settings;
+@synthesize correctPosition;
 
 
-#pragma mark - View Initialization
+#pragma mark - View Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,25 +38,26 @@
 
     // hide all controls
     [self hideControls];
-    
-    // Show up start button
-    self.startOutlet.hidden=NO;
+
   
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    // Animate initial scene
-//    [self initialSceneAnimation];
+    [self.navigationController.navigationBar setHidden:YES];
     
+    [self initializeUIControls];
 }
 
-#pragma mark - UI Actions
-- (IBAction)start:(id)sender {
-    
-    // Hide start outlet
-    self.startOutlet.hidden=YES;
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    // disable progress timer
+    [self.progressTimer invalidate];
+
+}
+
+-(void)initializeUIControls {
     
     // Generate random numbers
     [self generateRandomValues];
@@ -65,7 +67,34 @@
     
     // Start up progress timer
     [self startProgressTimer];
+
 }
+
+
+#pragma mark - UI Actions
+- (IBAction)close:(id)sender {
+    
+    [self.progressTimer invalidate];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)answer1Selected:(id)sender {
+    [self processAnswer:0];
+}
+
+- (IBAction)answer2Selected:(id)sender {
+    [self processAnswer:1];
+}
+
+- (IBAction)answer3Selected:(id)sender {
+    [self processAnswer:2];
+}
+
+- (IBAction)answer4Selected:(id)sender {
+    [self processAnswer:3];
+}
+
 
 
 
@@ -95,6 +124,7 @@
     self.answer3.alpha=0;
     self.answer4.alpha=0;
     self.progressBar.alpha=0;
+    self.separator.alpha=0;
 
 }
 
@@ -108,6 +138,7 @@
     self.answer3.alpha=1;
     self.answer4.alpha=1;
     self.progressBar.alpha=1;
+    self.separator.alpha=1;
     
 }
 
@@ -137,7 +168,13 @@
     }];
 }
 
-
+-(void)processAnswer:(int)answer {
+    if (answer==self.correctPosition) {
+        NSLog(@"WIN *****");
+    } else {
+        [self progressTimerTimeOut];
+    }
+}
 
 #pragma mark - Explosion Methods
 -(void)startExplosion
@@ -162,6 +199,7 @@
     if (self.explosionCounter==self.explosionImages.count-1) {
         [self.timer invalidate];
         self.explosionCounter=0;
+        [self.navigationController popViewControllerAnimated:YES];
         return;
     }
     
@@ -179,9 +217,9 @@
 -(void)generateRandomValues {
 
     int value=0;
-    int randomNumber=0;
-
-    NSLog(@"generateRandomValues  level=%d",self.game.level);
+    int q1=0;
+    int q2=0;
+    int result=0;
 
     if (self.game.level==1) {
         value=98;
@@ -189,28 +227,70 @@
         value=998;
     }
 
-    // Question 1
-    randomNumber=arc4random() % value;
-    self.question1.text=[NSString stringWithFormat:@"%d",randomNumber];
-    // Question 2
-    randomNumber=arc4random() % value;
-    self.question2.text=[NSString stringWithFormat:@"%d",randomNumber];
 
+    // Question 1
+    q1=arc4random() % value;
+    
+    // Question 2
+    q2=arc4random() % value;
+
+    self.question1.text=[NSString stringWithFormat:@"%d",q1];
+    self.question2.text=[NSString stringWithFormat:@"%d",q2];
+
+    int randomNumber=[self randomOperator];
     // Math Operator
-    if ([self randomOperator]==0) {
+    if (randomNumber==0) {
         self.mathOperator.text=@"+";
-    } else if ([self randomOperator]==1) {
+        result=q1+q2;
+    } else if (randomNumber==1) {
         self.mathOperator.text=@"-";
-    } else if ([self randomOperator]==2) {
-        self.mathOperator.text=@"*";
-    } else if ([self randomOperator]==3) {
+        if (q1<q2 && self.game.level==1) {
+            self.question1.text=[NSString stringWithFormat:@"%d",q2];
+            self.question2.text=[NSString stringWithFormat:@"%d",q1];
+            result=q2-q1;
+        } else {
+            result=q1-q2;
+        }
+    } else if (randomNumber==2) {
+        self.mathOperator.text=@"X";
+        result=q1*q2;
+    } else if (randomNumber==3) {
         self.mathOperator.text=@"/";
+        if (q1<q2 && self.game.level==1) {
+            self.question1.text=[NSString stringWithFormat:@"%d",q2];
+            self.question2.text=[NSString stringWithFormat:@"%d",q1];
+            result=q2/q1;
+        } else {
+            result=q1/q2;
+        }
+    }
+    
+    // Reset buttons
+    [self.answer1 setTitle:@"" forState:UIControlStateNormal];
+    [self.answer2 setTitle:@"" forState:UIControlStateNormal];
+    [self.answer3 setTitle:@"" forState:UIControlStateNormal];
+    [self.answer4 setTitle:@"" forState:UIControlStateNormal];
+    
+    // Plotting result in a random button
+    self.correctPosition=arc4random() % 4;
+    if (self.correctPosition==0) {
+        [self.answer1 setTitle:[NSString stringWithFormat:@"%d",result] forState:UIControlStateNormal];
+    } else if (self.correctPosition==1) {
+        [self.answer2 setTitle:[NSString stringWithFormat:@"%d",result] forState:UIControlStateNormal];
+    } else if (self.correctPosition==2) {
+        [self.answer3 setTitle:[NSString stringWithFormat:@"%d",result] forState:UIControlStateNormal];
+    } else if (self.correctPosition==3) {
+        [self.answer4 setTitle:[NSString stringWithFormat:@"%d",result] forState:UIControlStateNormal];
     }
 }
 
 -(int)randomOperator
 {
-    return arc4random() % 3;
+    if (self.game.level==1) {
+        return arc4random() % 3;
+    }else {
+        return arc4random() % 4;
+    }
 }
 
 
@@ -240,13 +320,6 @@
     [self playExplosionSound];
     [self startExplosion];
 }
-
-//#pragma mark - Touch Events
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//
-//}
-
 
 
 #pragma mark - Status Bar
