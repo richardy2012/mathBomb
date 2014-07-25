@@ -73,10 +73,7 @@
 
 #pragma mark - UI Actions
 - (IBAction)close:(id)sender {
-    
-    [self.progressTimer invalidate];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    [self closeView];
 }
 
 - (IBAction)answer1Selected:(id)sender {
@@ -99,6 +96,10 @@
 
 
 #pragma mark - Working Methods
+-(void)closeView {
+    [self.progressTimer invalidate];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void) loadExplosionImages
 {
     self.explosionImages=[[NSMutableArray alloc]init];
@@ -170,10 +171,34 @@
 
 -(void)processAnswer:(int)answer {
     if (answer==self.correctPosition) {
-        NSLog(@"WIN *****");
+        // play correct sound
+        [self playCorrectAnswerSound];
+        // disable progress timer
+        [self.progressTimer invalidate];
+        self.progressBar.progress=0;
+//        [self closeView];
+        // update score
+        [self.settings updateGameWithScore:self.game.score+1];
+        //
+        [self.progressTimer invalidate];
+        [self initializeUIControls];
     } else {
         [self progressTimerTimeOut];
     }
+}
+
+-(int)fakeNumberWithResult:(int)result {
+    int random=0;
+    if (result<=9) {
+        random=arc4random() % 10;
+    } else if (random<=99) {
+        random=arc4random() % 99;
+    } else if (random<=999) {
+        random=arc4random() % 999;
+    } else if (random<=9999) {
+        random=arc4random() % 9999;
+    }
+    return random;
 }
 
 #pragma mark - Explosion Methods
@@ -264,12 +289,13 @@
             result=q1/q2;
         }
     }
+
+    // Random values for the buttons
+    [self.answer1 setTitle:[NSString stringWithFormat:@"%d",[self fakeNumberWithResult:result]] forState:UIControlStateNormal];
+    [self.answer2 setTitle:[NSString stringWithFormat:@"%d",[self fakeNumberWithResult:result]] forState:UIControlStateNormal];
+    [self.answer3 setTitle:[NSString stringWithFormat:@"%d",[self fakeNumberWithResult:result]] forState:UIControlStateNormal];
+    [self.answer4 setTitle:[NSString stringWithFormat:@"%d",[self fakeNumberWithResult:result]] forState:UIControlStateNormal];
     
-    // Reset buttons
-    [self.answer1 setTitle:@"" forState:UIControlStateNormal];
-    [self.answer2 setTitle:@"" forState:UIControlStateNormal];
-    [self.answer3 setTitle:@"" forState:UIControlStateNormal];
-    [self.answer4 setTitle:@"" forState:UIControlStateNormal];
     
     // Plotting result in a random button
     self.correctPosition=arc4random() % 4;
@@ -297,6 +323,12 @@
 #pragma mark - Sound Effects
 -(void)playExplosionSound {
     NSURL *url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"explosion" ofType:@"mp3"]];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundId);
+    AudioServicesPlaySystemSound(soundId);
+}
+
+-(void)playCorrectAnswerSound {
+    NSURL *url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"correctAnswer" ofType:@"wav"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundId);
     AudioServicesPlaySystemSound(soundId);
 }

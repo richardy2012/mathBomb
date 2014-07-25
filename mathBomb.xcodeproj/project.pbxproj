@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C397EBE1982A72D0022B77C /* correctAnswer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9C397EBD1982A72D0022B77C /* correctAnswer.wav */; };
 		9C8EA1AE198066630000DCE4 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8EA1AD198066630000DCE4 /* InitialViewController.m */; };
 		9CA9FB041975ECCA00C540D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB031975ECCA00C540D4 /* Foundation.framework */; };
 		9CA9FB061975ECCA00C540D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB051975ECCA00C540D4 /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C397EBD1982A72D0022B77C /* correctAnswer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAnswer.wav; sourceTree = "<group>"; };
 		9C8EA1AC198066630000DCE4 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		9C8EA1AD198066630000DCE4 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		9CA9FB001975ECCA00C540D4 /* mathBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C397EBC1982A6540022B77C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				9C397EBD1982A72D0022B77C /* correctAnswer.wav */,
+				9CB6967219760D3C0066C15D /* explosion.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		9CA9FAF71975ECCA00C540D4 = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +162,7 @@
 		9CA9FB0A1975ECCA00C540D4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9CB6967219760D3C0066C15D /* explosion.mp3 */,
+				9C397EBC1982A6540022B77C /* Sounds */,
 				9CA9FB0B1975ECCA00C540D4 /* mathBomb-Info.plist */,
 				9CA9FB0C1975ECCA00C540D4 /* InfoPlist.strings */,
 				9CA9FB0F1975ECCA00C540D4 /* main.m */,
@@ -256,6 +267,7 @@
 			files = (
 				9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */,
 				9CA9FB1C1975ECCB00C540D4 /* Images.xcassets in Resources */,
+				9C397EBE1982A72D0022B77C /* correctAnswer.wav in Resources */,
 				9CA9FB0E1975ECCA00C540D4 /* InfoPlist.strings in Resources */,
 				9CA9FB171975ECCB00C540D4 /* Main.storyboard in Resources */,
 			);
