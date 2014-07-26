@@ -34,6 +34,9 @@
     // game & settings
     self.settings=[[Settings alloc]init];
     self.game=[[Game alloc]init];
+    
+    // Level will be available in future versions
+    self.level.hidden=YES;
 }
 
 -(void)viewWillAppear:(BOOL)animated {
