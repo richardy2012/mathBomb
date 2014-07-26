@@ -27,6 +27,7 @@
 		9C97E4F41983254300F934CC /* boom8.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97E4E21983254300F934CC /* boom8.png */; };
 		9C97E4F51983254300F934CC /* boom9.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97E4E31983254300F934CC /* boom9.png */; };
 		9C97E4F61983254300F934CC /* boom99.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97E4E41983254300F934CC /* boom99.png */; };
+		9C97E53E198447C000F934CC /* mathBomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C97E53D198447C000F934CC /* mathBomb.png */; };
 		9CA9FB041975ECCA00C540D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB031975ECCA00C540D4 /* Foundation.framework */; };
 		9CA9FB061975ECCA00C540D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB051975ECCA00C540D4 /* CoreGraphics.framework */; };
 		9CA9FB081975ECCA00C540D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB071975ECCA00C540D4 /* UIKit.framework */; };
@@ -80,6 +81,7 @@
 		9C97E4E21983254300F934CC /* boom8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom8.png; sourceTree = "<group>"; };
 		9C97E4E31983254300F934CC /* boom9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom9.png; sourceTree = "<group>"; };
 		9C97E4E41983254300F934CC /* boom99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boom99.png; sourceTree = "<group>"; };
+		9C97E53D198447C000F934CC /* mathBomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mathBomb.png; sourceTree = "<group>"; };
 		9CA9FB001975ECCA00C540D4 /* mathBomb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mathBomb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA9FB031975ECCA00C540D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9CA9FB051975ECCA00C540D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 		9CA9FAF71975ECCA00C540D4 = {
 			isa = PBXGroup;
 			children = (
+				9C97E53D198447C000F934CC /* mathBomb.png */,
 				9CA9FB091975ECCA00C540D4 /* mathBomb */,
 				9CA9FB281975ECCB00C540D4 /* mathBombTests */,
 				9CA9FB021975ECCA00C540D4 /* Frameworks */,
@@ -336,6 +339,7 @@
 				9C97E4EB1983254300F934CC /* boom14.png in Resources */,
 				9C97E4E71983254300F934CC /* boom10.png in Resources */,
 				9C97E4EA1983254300F934CC /* boom13.png in Resources */,
+				9C97E53E198447C000F934CC /* mathBomb.png in Resources */,
 				9C97E4F41983254300F934CC /* boom8.png in Resources */,
 				9C97E4F31983254300F934CC /* boom7.png in Resources */,
 				9C97E4F01983254300F934CC /* boom4.png in Resources */,

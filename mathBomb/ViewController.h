@@ -47,5 +47,8 @@
 // Correct button's position
 @property int correctPosition;
 
+// Answers to be shown & unique
+@property (nonatomic,strong) NSMutableArray *answers;
+
 
 @end

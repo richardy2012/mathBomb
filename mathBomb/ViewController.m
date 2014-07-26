@@ -19,7 +19,7 @@
 @synthesize explosionCounter;
 @synthesize explosionImages;
 @synthesize question1,question2,mathOperator,answer1,answer2,answer3,answer4,progressBar,separator;
-
+@synthesize answers;
 @synthesize gameLevel;
 @synthesize game,settings;
 @synthesize correctPosition;
@@ -38,7 +38,9 @@
 
     // hide all controls
     [self hideControls];
-
+    
+    // Unique answers
+    self.answers=[[NSMutableArray alloc]init];
   
 }
 
@@ -176,7 +178,6 @@
         // disable progress timer
         [self.progressTimer invalidate];
         self.progressBar.progress=0;
-//        [self closeView];
         // update score
         [self.settings updateGameWithScore:self.game.score+1];
         //
@@ -188,15 +189,29 @@
 }
 
 -(int)fakeNumberWithResult:(int)result {
+    BOOL unique=NO;
     int random=0;
-    if (result<=9) {
-        random=arc4random() % 10;
-    } else if (random<=99) {
-        random=arc4random() % 99;
-    } else if (random<=999) {
-        random=arc4random() % 999;
-    } else if (random<=9999) {
-        random=arc4random() % 9999;
+    
+    while (!unique) {
+        if (result<=9) {
+            random=arc4random() % 10;
+        } else if (random<=99) {
+            random=arc4random() % 99;
+        } else if (random<=999) {
+            random=arc4random() % 999;
+        } else if (random<=9999) {
+            random=arc4random() % 9999;
+        }
+        int count=0;
+        // test if it is unique
+        for (NSString *answer in self.answers) {
+            if (random==[answer intValue]) {
+                count++;
+            }
+        }
+        if (count==0) {
+            unique=YES;
+        }
     }
     return random;
 }
@@ -290,6 +305,10 @@
         }
     }
 
+    // clean-up unique answers
+    [self.answers removeAllObjects];
+    [self.answers addObject:[NSString stringWithFormat:@"%d",result]];
+    
     // Random values for the buttons
     [self.answer1 setTitle:[NSString stringWithFormat:@"%d",[self fakeNumberWithResult:result]] forState:UIControlStateNormal];
     [self.answer2 setTitle:[NSString stringWithFormat:@"%d",[self fakeNumberWithResult:result]] forState:UIControlStateNormal];
