@@ -313,7 +313,7 @@
 -(int)randomOperator
 {
     if (self.game.level==1) {
-        return arc4random() % 3;
+        return arc4random() % 2;
     }else {
         return arc4random() % 4;
     }
