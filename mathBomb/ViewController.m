@@ -213,6 +213,7 @@
             unique=YES;
         }
     }
+    [self.answers addObject:[NSString stringWithFormat:@"%d",random]];
     return random;
 }
 
