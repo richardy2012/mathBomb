@@ -42,13 +42,11 @@
 
 -(void)addGameWithObject:(Game *)objGame
 {
-    self.game=[[Game alloc]init];
     self.game=objGame;
     
     NSString *gameLevel=[NSString stringWithFormat:@"%d",self.game.level];
     NSString *gameScore=[NSString stringWithFormat:@"%d",self.game.score];
-    
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:gameLevel forKey:GAME_LEVEL];
     [defaults setObject:gameScore forKey:GAME_SCORE];
@@ -69,9 +67,9 @@
     [defaults synchronize];
     
 }
--(void)updateGameWithObject:(Game *)game
+-(void)updateGameWithObject:(Game *)objGame
 {
-    self.game=[[Game alloc]init];
+    self.game=objGame;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[NSString stringWithFormat:@"%d",self.game.level] forKeyPath:GAME_LEVEL];
     [defaults setValue:[NSString stringWithFormat:@"%d",self.game.score] forKeyPath:GAME_SCORE];

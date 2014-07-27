@@ -86,7 +86,7 @@
         self.medal3.image=[UIImage imageNamed:@"goldMedal"];
         self.medal4.image=[UIImage imageNamed:@"goldMedal"];
         self.medal5.image=nil;
-    }  else if (medalsQty==5) {
+    }  else if (medalsQty>=5) {
         self.medal1.image=[UIImage imageNamed:@"goldMedal"];
         self.medal2.image=[UIImage imageNamed:@"goldMedal"];
         self.medal3.image=[UIImage imageNamed:@"goldMedal"];

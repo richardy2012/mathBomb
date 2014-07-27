@@ -69,6 +69,7 @@
     [self showControls];
     
     // Display medals
+    self.game=[self.settings getGame];
     [self displayMedalsWithScore:self.game.score];
     
     // Start up progress timer
@@ -135,7 +136,7 @@
         self.medal3.image=[UIImage imageNamed:@"goldMedal"];
         self.medal4.image=[UIImage imageNamed:@"goldMedal"];
         self.medal5.image=nil;
-    }  else if (medalsQty==5) {
+    }  else if (medalsQty>=5) {
         self.medal1.image=[UIImage imageNamed:@"goldMedal"];
         self.medal2.image=[UIImage imageNamed:@"goldMedal"];
         self.medal3.image=[UIImage imageNamed:@"goldMedal"];
@@ -174,7 +175,11 @@
     self.answer4.alpha=0;
     self.progressBar.alpha=0;
     self.separator.alpha=0;
-
+    self.medal1.alpha=0;
+    self.medal2.alpha=0;
+    self.medal3.alpha=0;
+    self.medal4.alpha=0;
+    self.medal5.alpha=0;
 }
 
 -(void) showControls
@@ -188,33 +193,11 @@
     self.answer4.alpha=1;
     self.progressBar.alpha=1;
     self.separator.alpha=1;
-    
-}
-
-
--(void)initialSceneAnimation
-{
-    [UIView animateWithDuration:2.00f animations:^{
-        self.question1.alpha=1;
-        self.question2.alpha=1;
-        self.mathOperator.alpha=1;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:5.50f animations:^{
-            // create an initial explosion
-            [self playExplosionSound];
-            [self startExplosion];
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:1.00f animations:^{
-                self.answer1.alpha=1;
-                self.answer2.alpha=1;
-                self.answer3.alpha=1;
-                self.answer4.alpha=1;
-            } completion:^(BOOL finished) {
-                NSLog(@"completion");
-            }];
-
-        }];
-    }];
+    self.medal1.alpha=1;
+    self.medal2.alpha=1;
+    self.medal3.alpha=1;
+    self.medal4.alpha=1;
+    self.medal5.alpha=1;
 }
 
 -(void)processAnswer:(int)answer {
@@ -225,8 +208,13 @@
         [self.progressTimer invalidate];
         self.progressBar.progress=0;
         // update score
-        [self.settings updateGameWithScore:self.game.score+1];
-        //
+        self.game=[self.settings getGame];
+        int newScore=self.game.score+1;
+        int newLevel=(newScore/GOLD_MEDAL_RATIO)+1;
+
+        Game *objGame=[[Game alloc]initWithLevel:newLevel score:newScore];
+        [self.settings updateGameWithObject:objGame];
+
         [self.progressTimer invalidate];
         [self initializeUIControls];
     } else {
@@ -237,17 +225,8 @@
 -(int)fakeNumberWithResult:(int)result {
     BOOL unique=NO;
     int random=0;
-    
     while (!unique) {
-        if (result<=9) {
-            random=arc4random() % 10;
-        } else if (random<=99) {
-            random=arc4random() % 99;
-        } else if (random<=999) {
-            random=arc4random() % 999;
-        } else if (random<=9999) {
-            random=arc4random() % 9999;
-        }
+        random=arc4random_uniform(result) + result/2;
         int count=0;
         // test if it is unique
         for (NSString *answer in self.answers) {
@@ -302,7 +281,7 @@
 
 #pragma mark - Number Generation
 -(void)generateRandomValues {
-
+    
     int value=0;
     int q1=0;
     int q2=0;
@@ -312,6 +291,10 @@
         value=98;
     } else if (self.game.level==2) {
         value=998;
+    } else if (self.game.level==3) {
+        value=998;
+    } else if (self.game.level>=4) {
+        value=9998;
     }
 
 
@@ -331,7 +314,7 @@
         result=q1+q2;
     } else if (randomNumber==1) {
         self.mathOperator.text=@"-";
-        if (q1<q2 && self.game.level==1) {
+        if (q1<q2 && (self.game.level==1 || self.game.level==2 || self.game.level==3)) {
             self.question1.text=[NSString stringWithFormat:@"%d",q2];
             self.question2.text=[NSString stringWithFormat:@"%d",q1];
             result=q2-q1;
@@ -343,7 +326,7 @@
         result=q1*q2;
     } else if (randomNumber==3) {
         self.mathOperator.text=@"/";
-        if (q1<q2 && self.game.level==1) {
+        if (q1<q2 && (self.game.level==1 || self.game.level==2 || self.game.level==3)) {
             self.question1.text=[NSString stringWithFormat:@"%d",q2];
             self.question2.text=[NSString stringWithFormat:@"%d",q1];
             result=q2/q1;
@@ -380,8 +363,12 @@
 {
     if (self.game.level==1) {
         return arc4random() % 2;
-    }else {
-        return arc4random() % 4;
+    } else if (self.game.level==2) {
+        return arc4random() %2;
+    } else if (self.game.level==3) {
+        return arc4random() %3;
+    } else {
+        return arc4random() %4;
     }
 }
 
