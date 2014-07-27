@@ -23,7 +23,7 @@
 @synthesize gameLevel;
 @synthesize game,settings;
 @synthesize correctPosition;
-
+@synthesize medal1,medal2,medal3,medal4,medal5,medals;
 
 #pragma mark - View Life Cycle
 - (void)viewDidLoad
@@ -35,6 +35,7 @@
     // Get game settings
     self.settings=[[Settings alloc]init];
     self.game=[self.settings getGame];
+    self.medals=[[Medals alloc]init];
 
     // hide all controls
     [self hideControls];
@@ -67,6 +68,9 @@
     // Show controls
     [self showControls];
     
+    // Display medals
+    [self displayMedalsWithScore:self.game.score];
+    
     // Start up progress timer
     [self startProgressTimer];
 
@@ -98,6 +102,48 @@
 
 
 #pragma mark - Working Methods
+-(void)displayMedalsWithScore:(int)score
+{
+    int medalsQty=[self.medals medalsWithScore:self.game.score];
+    if (medalsQty==0) {
+        self.medal1.image=nil;
+        self.medal2.image=nil;
+        self.medal3.image=nil;
+        self.medal4.image=nil;
+        self.medal5.image=nil;
+    } else if (medalsQty==1) {
+        self.medal1.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal2.image=nil;
+        self.medal3.image=nil;
+        self.medal4.image=nil;
+        self.medal5.image=nil;
+    }  else if (medalsQty==2) {
+        self.medal1.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal2.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal3.image=nil;
+        self.medal4.image=nil;
+        self.medal5.image=nil;
+    }  else if (medalsQty==3) {
+        self.medal1.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal2.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal3.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal4.image=nil;
+        self.medal5.image=nil;
+    }  else if (medalsQty==4) {
+        self.medal1.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal2.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal3.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal4.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal5.image=nil;
+    }  else if (medalsQty==5) {
+        self.medal1.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal2.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal3.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal4.image=[UIImage imageNamed:@"goldMedal"];
+        self.medal5.image=[UIImage imageNamed:@"goldMedal"];
+    }
+}
+
 -(void)closeView {
     [self.progressTimer invalidate];
     [self.navigationController popViewControllerAnimated:YES];

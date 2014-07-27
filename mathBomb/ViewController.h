@@ -11,6 +11,7 @@
 #import<AVFoundation/AVFoundation.h>
 #import "Game.h"
 #import "Settings.h"
+#import "Medals.h"
 
 @interface ViewController : UIViewController
 {
@@ -27,6 +28,11 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @property (weak, nonatomic) IBOutlet UILabel *separator;
 
+@property (weak, nonatomic) IBOutlet UIImageView *medal1;
+@property (weak, nonatomic) IBOutlet UIImageView *medal2;
+@property (weak, nonatomic) IBOutlet UIImageView *medal3;
+@property (weak, nonatomic) IBOutlet UIImageView *medal4;
+@property (weak, nonatomic) IBOutlet UIImageView *medal5;
 
 
 // Level of the game (starting from 1)
@@ -43,6 +49,9 @@
 
 // Settings
 @property (nonatomic,strong) Settings *settings;
+
+// Gold Medals
+@property (nonatomic,strong) Medals *medals;
 
 // Correct button's position
 @property int correctPosition;

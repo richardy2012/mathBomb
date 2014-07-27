@@ -128,7 +128,7 @@
                                     <action selector="close:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9yt-lV-vdo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="XeE-Zy-6ld">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XeE-Zy-6ld">
                                 <rect key="frame" x="70" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -136,7 +136,7 @@
                                     <constraint firstAttribute="height" constant="24" id="oB0-aB-amY"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-rK-FdF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-rK-FdF">
                                 <rect key="frame" x="95" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -144,7 +144,7 @@
                                     <constraint firstAttribute="height" constant="24" id="oL7-rK-Tq1"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-og-cgS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-og-cgS">
                                 <rect key="frame" x="120" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -152,7 +152,7 @@
                                     <constraint firstAttribute="height" constant="24" id="h44-ld-LbL"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="wdl-bj-K7P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wdl-bj-K7P">
                                 <rect key="frame" x="45" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -160,7 +160,7 @@
                                     <constraint firstAttribute="height" constant="24" id="nHZ-US-vIN"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="KFV-7K-sux">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KFV-7K-sux">
                                 <rect key="frame" x="20" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -205,6 +205,11 @@
                         <outlet property="answer3" destination="fEB-Yf-zk9" id="wX4-uq-h6S"/>
                         <outlet property="answer4" destination="3Ds-iD-9Bv" id="tMr-YW-l6I"/>
                         <outlet property="mathOperator" destination="4SM-cO-SHD" id="GUx-jG-CRG"/>
+                        <outlet property="medal1" destination="KFV-7K-sux" id="kvu-wG-so8"/>
+                        <outlet property="medal2" destination="wdl-bj-K7P" id="k2x-oi-N2i"/>
+                        <outlet property="medal3" destination="XeE-Zy-6ld" id="any-ZQ-lwu"/>
+                        <outlet property="medal4" destination="Wrz-rK-FdF" id="ccQ-t2-YgE"/>
+                        <outlet property="medal5" destination="dW6-og-cgS" id="jWH-4m-neu"/>
                         <outlet property="progressBar" destination="Q4Z-ag-UrC" id="rjh-Og-waZ"/>
                         <outlet property="question1" destination="dbA-rx-nLe" id="Oet-Ry-vuO"/>
                         <outlet property="question2" destination="pQA-hb-Chh" id="7bO-Vc-AkB"/>
@@ -279,23 +284,23 @@
                                 <rect key="frame" x="105" y="128" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="I2W-Wq-tGZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2W-Wq-tGZ">
                                 <rect key="frame" x="70" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="XTd-pl-CBV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTd-pl-CBV">
                                 <rect key="frame" x="95" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-GI-XCp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-GI-XCp">
                                 <rect key="frame" x="120" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="sm1-6u-65Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sm1-6u-65Q">
                                 <rect key="frame" x="45" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-Vn-FNh">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-Vn-FNh">
                                 <rect key="frame" x="20" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -307,6 +312,11 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="level" destination="Ygi-a8-KWb" id="sPz-8P-fLA"/>
+                        <outlet property="medal1" destination="hS1-Vn-FNh" id="Usu-xy-wKq"/>
+                        <outlet property="medal2" destination="sm1-6u-65Q" id="7sy-LZ-Kzn"/>
+                        <outlet property="medal3" destination="I2W-Wq-tGZ" id="Jug-JP-bCt"/>
+                        <outlet property="medal4" destination="XTd-pl-CBV" id="5pb-Aa-ltc"/>
+                        <outlet property="medal5" destination="v9i-GI-XCp" id="GZW-r8-bzT"/>
                         <outlet property="score" destination="I2d-0o-Haf" id="ffg-Sh-r85"/>
                     </connections>
                 </viewController>
@@ -335,7 +345,6 @@
     </scenes>
     <resources>
         <image name="boom7" width="128" height="128"/>
-        <image name="goldMedal" width="128" height="128"/>
         <image name="icon_x" width="11" height="11"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
