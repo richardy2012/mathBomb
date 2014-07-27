@@ -22,6 +22,8 @@
 #define PROGRESS_TIMER_DURATION 0.05
 #define PROGRESS_TIMER_BAR_SEED 0.005
 
+// Gold Medal Ratio
+#define GOLD_MEDAL_RATIO 25
 
 // User Defaults
 #define GAME_LEVEL @"gameLevel"

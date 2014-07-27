@@ -118,7 +118,7 @@
                                 <color key="progressTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="trackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqW-58-St0">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqW-58-St0">
                                 <rect key="frame" x="269" y="5" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="icon_x">
@@ -128,9 +128,53 @@
                                     <action selector="close:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9yt-lV-vdo"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="XeE-Zy-6ld">
+                                <rect key="frame" x="70" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="fsF-gE-0hL"/>
+                                    <constraint firstAttribute="height" constant="24" id="oB0-aB-amY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="Wrz-rK-FdF">
+                                <rect key="frame" x="95" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="8eh-3c-FD9"/>
+                                    <constraint firstAttribute="height" constant="24" id="oL7-rK-Tq1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-og-cgS">
+                                <rect key="frame" x="120" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="a3I-fP-ECH"/>
+                                    <constraint firstAttribute="height" constant="24" id="h44-ld-LbL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="wdl-bj-K7P">
+                                <rect key="frame" x="45" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="cRv-fK-Q9k"/>
+                                    <constraint firstAttribute="height" constant="24" id="nHZ-US-vIN"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="KFV-7K-sux">
+                                <rect key="frame" x="20" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="HOo-Hf-KOm"/>
+                                    <constraint firstAttribute="height" constant="24" id="JyX-F2-qgd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="TqW-58-St0" firstAttribute="leading" secondItem="dW6-og-cgS" secondAttribute="trailing" constant="125" id="4gS-MG-S4u"/>
+                            <constraint firstItem="dW6-og-cgS" firstAttribute="leading" secondItem="Wrz-rK-FdF" secondAttribute="trailing" constant="1" id="8CR-8m-jtl"/>
+                            <constraint firstItem="XeE-Zy-6ld" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ao7-Jn-5Co"/>
+                            <constraint firstItem="Wrz-rK-FdF" firstAttribute="leading" secondItem="XeE-Zy-6ld" secondAttribute="trailing" constant="1" id="FUO-uU-06f"/>
                             <constraint firstAttribute="trailing" secondItem="3Ds-iD-9Bv" secondAttribute="trailing" constant="22" id="Fbb-Mc-0eM"/>
                             <constraint firstItem="7dP-EH-yQR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="22" id="GsK-Xf-e1j"/>
                             <constraint firstItem="3Ds-iD-9Bv" firstAttribute="leading" secondItem="fEB-Yf-zk9" secondAttribute="trailing" constant="32" id="KbT-np-Whs"/>
@@ -140,10 +184,17 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Q4Z-ag-UrC" secondAttribute="bottom" constant="27" id="QZg-8u-2JF"/>
                             <constraint firstItem="Q4Z-ag-UrC" firstAttribute="top" secondItem="fEB-Yf-zk9" secondAttribute="bottom" constant="43" id="Rgu-vz-i82"/>
                             <constraint firstItem="fEB-Yf-zk9" firstAttribute="top" secondItem="7dP-EH-yQR" secondAttribute="bottom" constant="23" id="UpS-Q2-tfq"/>
+                            <constraint firstItem="KFV-7K-sux" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="Uw4-KK-LEj"/>
                             <constraint firstAttribute="trailing" secondItem="IXm-5U-VXo" secondAttribute="trailing" constant="22" id="btf-N6-Xd9"/>
                             <constraint firstItem="IXm-5U-VXo" firstAttribute="leading" secondItem="7dP-EH-yQR" secondAttribute="trailing" constant="32" id="enj-ZQ-lTn"/>
                             <constraint firstItem="Q4Z-ag-UrC" firstAttribute="top" secondItem="3Ds-iD-9Bv" secondAttribute="bottom" constant="43" id="hHt-5z-vOe"/>
+                            <constraint firstItem="dW6-og-cgS" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="jKI-4Q-cx5"/>
+                            <constraint firstItem="wdl-bj-K7P" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="krd-WI-kYg"/>
+                            <constraint firstItem="wdl-bj-K7P" firstAttribute="leading" secondItem="KFV-7K-sux" secondAttribute="trailing" constant="1" id="l3n-sX-s87"/>
                             <constraint firstAttribute="trailing" secondItem="Q4Z-ag-UrC" secondAttribute="trailing" constant="22" id="lCy-jg-nUF"/>
+                            <constraint firstItem="XeE-Zy-6ld" firstAttribute="leading" secondItem="wdl-bj-K7P" secondAttribute="trailing" constant="1" id="nPh-Cf-jQZ"/>
+                            <constraint firstItem="KFV-7K-sux" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="qTB-NL-hXh"/>
+                            <constraint firstItem="Wrz-rK-FdF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="uyJ-dr-yUC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V72-QM-fSw"/>
@@ -189,13 +240,9 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="startGame" id="qGr-lB-2sz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(c) Marcelo Sampaio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgy-OG-KeL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(c) Marcelo Sampaio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgy-OG-KeL">
                                 <rect key="frame" x="84" y="532" width="153" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="153" id="5Ai-A9-lIb"/>
-                                    <constraint firstAttribute="height" constant="16" id="co3-q8-etP"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -232,13 +279,28 @@
                                 <rect key="frame" x="105" y="128" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="I2W-Wq-tGZ">
+                                <rect key="frame" x="70" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="XTd-pl-CBV">
+                                <rect key="frame" x="95" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="v9i-GI-XCp">
+                                <rect key="frame" x="120" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="sm1-6u-65Q">
+                                <rect key="frame" x="45" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="goldMedal" translatesAutoresizingMaskIntoConstraints="NO" id="hS1-Vn-FNh">
+                                <rect key="frame" x="20" y="0.0" width="24" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="qcT-dL-S7b" firstAttribute="top" secondItem="Lgy-OG-KeL" secondAttribute="bottom" constant="20" id="OId-ho-nxb"/>
-                            <constraint firstAttribute="trailing" secondItem="Lgy-OG-KeL" secondAttribute="trailing" constant="83" id="whh-gA-MAW"/>
-                            <constraint firstItem="Lgy-OG-KeL" firstAttribute="leading" secondItem="bTv-c8-kWi" secondAttribute="leading" constant="84" id="zBb-yT-vfe"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hf5-gK-QB1"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -273,6 +335,7 @@
     </scenes>
     <resources>
         <image name="boom7" width="128" height="128"/>
+        <image name="goldMedal" width="128" height="128"/>
         <image name="icon_x" width="11" height="11"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
