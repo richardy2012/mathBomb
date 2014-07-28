@@ -227,7 +227,7 @@
     int random=0;
     while (!unique) {
         int delta=result/2;
-        if (result<5) {
+        if (delta<5) {
             delta=30;
         }
 
