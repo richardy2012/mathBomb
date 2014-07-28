@@ -226,7 +226,12 @@
     BOOL unique=NO;
     int random=0;
     while (!unique) {
-        random=arc4random_uniform(result) + result/2;
+        int delta=result/2;
+        if (result<5) {
+            delta=30;
+        }
+
+        random=arc4random_uniform(result) + delta;
         int count=0;
         // test if it is unique
         for (NSString *answer in self.answers) {
