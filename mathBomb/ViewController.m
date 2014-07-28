@@ -222,6 +222,7 @@
     }
 }
 
+
 -(int)fakeNumberWithResult:(int)result {
     BOOL unique=NO;
     int random=0;
