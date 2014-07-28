@@ -245,9 +245,13 @@
                                     <segue destination="vXZ-lx-hvc" kind="push" identifier="startGame" id="qGr-lB-2sz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(c) Marcelo Sampaio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgy-OG-KeL">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(c) Marcelo Sampaio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgy-OG-KeL">
                                 <rect key="frame" x="84" y="532" width="153" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="1n7-Ot-dLw"/>
+                                    <constraint firstAttribute="height" constant="16" id="uw8-lM-Wne"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -306,6 +310,11 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lgy-OG-KeL" firstAttribute="leading" secondItem="bTv-c8-kWi" secondAttribute="leading" constant="84" id="Yy0-Sg-VqS"/>
+                            <constraint firstAttribute="trailing" secondItem="Lgy-OG-KeL" secondAttribute="trailing" constant="83" id="mkw-TX-eGN"/>
+                            <constraint firstItem="qcT-dL-S7b" firstAttribute="top" secondItem="Lgy-OG-KeL" secondAttribute="bottom" constant="20" id="zI3-CH-HHj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hf5-gK-QB1"/>
                     <nil key="simulatedTopBarMetrics"/>
