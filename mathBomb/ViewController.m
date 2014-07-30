@@ -227,12 +227,13 @@
     BOOL unique=NO;
     int random=0;
     while (!unique) {
-        int delta=result/2;
-        if (delta<5) {
-            delta=30;
+        if (result<10) {
+            random=arc4random() % 9;
+        }else{
+            int delta=result/2;
+            random=arc4random_uniform(result) + delta;
         }
 
-        random=arc4random_uniform(result) + delta;
         int count=0;
         // test if it is unique
         for (NSString *answer in self.answers) {
@@ -240,6 +241,7 @@
                 count++;
             }
         }
+
         if (count==0) {
             unique=YES;
         }
@@ -301,6 +303,8 @@
         value=998;
     } else if (self.game.level>=4) {
         value=9998;
+    } else {
+        value=98;
     }
 
 
