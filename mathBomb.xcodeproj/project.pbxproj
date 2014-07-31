@@ -43,6 +43,7 @@
 		9CA9FB251975ECCB00C540D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CA9FB071975ECCA00C540D4 /* UIKit.framework */; };
 		9CA9FB2D1975ECCB00C540D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9FB2B1975ECCB00C540D4 /* InfoPlist.strings */; };
 		9CA9FB2F1975ECCB00C540D4 /* mathBombTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9FB2E1975ECCB00C540D4 /* mathBombTests.m */; };
+		9CB4A8551989DF01005F8BB3 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4A8541989DF01005F8BB3 /* iPad.storyboard */; };
 		9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CB6967219760D3C0066C15D /* explosion.mp3 */; };
 		9CB6967519760D5E0066C15D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967419760D5E0066C15D /* AVFoundation.framework */; };
 		9CB6967719760D6E0066C15D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967619760D6E0066C15D /* AudioToolbox.framework */; };
@@ -104,6 +105,7 @@
 		9CA9FB2A1975ECCB00C540D4 /* mathBombTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mathBombTests-Info.plist"; sourceTree = "<group>"; };
 		9CA9FB2C1975ECCB00C540D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CA9FB2E1975ECCB00C540D4 /* mathBombTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mathBombTests.m; sourceTree = "<group>"; };
+		9CB4A8541989DF01005F8BB3 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
 		9CB6967219760D3C0066C15D /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		9CB6967419760D5E0066C15D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9CB6967619760D6E0066C15D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -212,6 +214,7 @@
 				9CA9FB121975ECCB00C540D4 /* AppDelegate.h */,
 				9CA9FB131975ECCB00C540D4 /* AppDelegate.m */,
 				9CA9FB151975ECCB00C540D4 /* Main.storyboard */,
+				9CB4A8541989DF01005F8BB3 /* iPad.storyboard */,
 				9CB6967B1976386A0066C15D /* Game.h */,
 				9CB6967C1976386A0066C15D /* Game.m */,
 				9CB6968119763BD60066C15D /* Settings.h */,
@@ -353,6 +356,7 @@
 				9C97E4EE1983254300F934CC /* boom2.png in Resources */,
 				9C97E4E91983254300F934CC /* boom12.png in Resources */,
 				9CA9FB0E1975ECCA00C540D4 /* InfoPlist.strings in Resources */,
+				9CB4A8551989DF01005F8BB3 /* iPad.storyboard in Resources */,
 				9C97E4F21983254300F934CC /* boom6.png in Resources */,
 				9C97E4E81983254300F934CC /* boom11.png in Resources */,
 				9C97E4EF1983254300F934CC /* boom3.png in Resources */,
@@ -512,9 +516,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mathBomb/mathBomb-Prefix.pch";
 				INFOPLIST_FILE = "mathBomb/mathBomb-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5D83229C-D1A7-4C86-A275-86CA278E354D";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,9 +533,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mathBomb/mathBomb-Prefix.pch";
 				INFOPLIST_FILE = "mathBomb/mathBomb-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "B722C5E0-57D5-421A-9570-2FBFEEBDB074";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

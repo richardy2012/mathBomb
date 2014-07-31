@@ -34,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *medal4;
 @property (weak, nonatomic) IBOutlet UIImageView *medal5;
 
+@property (weak, nonatomic) IBOutlet UIButton *closeOutlet;
+
 
 // Level of the game (starting from 1)
 @property int gameLevel;

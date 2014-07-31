@@ -24,6 +24,7 @@
 @synthesize game,settings;
 @synthesize correctPosition;
 @synthesize medal1,medal2,medal3,medal4,medal5,medals;
+@synthesize closeOutlet;
 
 #pragma mark - View Life Cycle
 - (void)viewDidLoad
@@ -180,6 +181,7 @@
     self.medal3.alpha=0;
     self.medal4.alpha=0;
     self.medal5.alpha=0;
+    self.closeOutlet.alpha=0;
 }
 
 -(void) showControls
@@ -198,6 +200,7 @@
     self.medal3.alpha=1;
     self.medal4.alpha=1;
     self.medal5.alpha=1;
+    self.closeOutlet.alpha=1;
 }
 
 -(void)processAnswer:(int)answer {
