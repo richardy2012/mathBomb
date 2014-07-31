@@ -25,11 +25,15 @@
 @synthesize correctPosition;
 @synthesize medal1,medal2,medal3,medal4,medal5,medals;
 @synthesize closeOutlet;
+@synthesize backgroundMusicPlayer;
 
 #pragma mark - View Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Play background music
+    [self playBackgroundMusic];
+    
     // load images to be used in the explosion
     [self loadExplosionImages];
 
@@ -147,6 +151,7 @@
 }
 
 -(void)closeView {
+    [self.backgroundMusicPlayer stop];
     [self.progressTimer invalidate];
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -221,6 +226,7 @@
         [self.progressTimer invalidate];
         [self initializeUIControls];
     } else {
+        [self.backgroundMusicPlayer stop];
         [self progressTimerTimeOut];
     }
 }
@@ -279,9 +285,14 @@
         [self.navigationController popViewControllerAnimated:YES];
         return;
     }
-    
+
     // add explosion frame
-    UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width/2)-(SIZE/2), ((self.view.frame.size.height/2)-(SIZE/2))+YSEED, SIZE, SIZE)];
+    int newSize=SIZE;
+    if (IS_IPAD_DEVICE) {
+        newSize=SIZE*2;
+    }
+    
+    UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width/2)-(newSize/2), ((self.view.frame.size.height/2)-(newSize/2))+YSEED, newSize, newSize)];
     imageView.image=[UIImage imageNamed:[self.explosionImages objectAtIndex:explosionCounter]];
     imageView.tag=999;
     [self.view addSubview:imageView];
@@ -387,6 +398,18 @@
 
 
 #pragma mark - Sound Effects
+-(void)playBackgroundMusic {
+    // configure Sound Track
+    NSError *error;
+    NSURL *backgroundMusicURL = [[NSBundle mainBundle] URLForResource:@"musicBackground" withExtension:@"mp3"];
+    
+    
+    self.backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:backgroundMusicURL error:&error];
+    self.backgroundMusicPlayer.numberOfLoops = -1;
+    [self.backgroundMusicPlayer prepareToPlay];
+    [self.backgroundMusicPlayer play];
+}
+
 -(void)playExplosionSound {
     NSURL *url=[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"explosion" ofType:@"mp3"]];
     AudioServicesCreateSystemSoundID((__bridge CFURLRef)url, &soundId);
@@ -406,6 +429,7 @@
 }
 -(void)progressTimerPulse {
     if (self.progressBar.progress>=1.00) {
+        [self.backgroundMusicPlayer stop];
         [self progressTimerTimeOut];
         return;
     }

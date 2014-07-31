@@ -44,6 +44,7 @@
 		9CA9FB2D1975ECCB00C540D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CA9FB2B1975ECCB00C540D4 /* InfoPlist.strings */; };
 		9CA9FB2F1975ECCB00C540D4 /* mathBombTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9FB2E1975ECCB00C540D4 /* mathBombTests.m */; };
 		9CB4A8551989DF01005F8BB3 /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4A8541989DF01005F8BB3 /* iPad.storyboard */; };
+		9CB4A857198AA700005F8BB3 /* musicBackground.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CB4A856198AA700005F8BB3 /* musicBackground.mp3 */; };
 		9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9CB6967219760D3C0066C15D /* explosion.mp3 */; };
 		9CB6967519760D5E0066C15D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967419760D5E0066C15D /* AVFoundation.framework */; };
 		9CB6967719760D6E0066C15D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB6967619760D6E0066C15D /* AudioToolbox.framework */; };
@@ -106,6 +107,7 @@
 		9CA9FB2C1975ECCB00C540D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9CA9FB2E1975ECCB00C540D4 /* mathBombTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mathBombTests.m; sourceTree = "<group>"; };
 		9CB4A8541989DF01005F8BB3 /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPad.storyboard; sourceTree = "<group>"; };
+		9CB4A856198AA700005F8BB3 /* musicBackground.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicBackground.mp3; sourceTree = "<group>"; };
 		9CB6967219760D3C0066C15D /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
 		9CB6967419760D5E0066C15D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9CB6967619760D6E0066C15D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				9C397EBD1982A72D0022B77C /* correctAnswer.wav */,
+				9CB4A856198AA700005F8BB3 /* musicBackground.mp3 */,
 				9CB6967219760D3C0066C15D /* explosion.mp3 */,
 			);
 			name = Sounds;
@@ -338,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB4A857198AA700005F8BB3 /* musicBackground.mp3 in Resources */,
 				9C97E4EC1983254300F934CC /* boom15.png in Resources */,
 				9CB6967319760D3C0066C15D /* explosion.mp3 in Resources */,
 				9C97E4F61983254300F934CC /* boom99.png in Resources */,

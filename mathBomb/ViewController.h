@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import<AVFoundation/AVFoundation.h>
+#import <AVFoundation/AVFoundation.h>
 #import "Game.h"
 #import "Settings.h"
 #import "Medals.h"
@@ -36,6 +36,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *closeOutlet;
 
+// backgorund music
+@property (strong,nonatomic) AVAudioPlayer *backgroundMusicPlayer;
 
 // Level of the game (starting from 1)
 @property int gameLevel;
