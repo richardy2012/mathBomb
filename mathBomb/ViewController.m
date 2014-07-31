@@ -26,13 +26,16 @@
 @synthesize medal1,medal2,medal3,medal4,medal5,medals;
 @synthesize closeOutlet;
 @synthesize backgroundMusicPlayer;
+@synthesize music;
 
 #pragma mark - View Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Play background music
-    [self playBackgroundMusic];
+    if (self.music) {
+        [self playBackgroundMusic];
+    }
     
     // load images to be used in the explosion
     [self loadExplosionImages];

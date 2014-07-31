@@ -12,13 +12,13 @@
 #import "Medals.h"
 
 @interface InitialViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *level;
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UIImageView *medal1;
 @property (weak, nonatomic) IBOutlet UIImageView *medal2;
 @property (weak, nonatomic) IBOutlet UIImageView *medal3;
 @property (weak, nonatomic) IBOutlet UIImageView *medal4;
 @property (weak, nonatomic) IBOutlet UIImageView *medal5;
+@property (weak, nonatomic) IBOutlet UIButton *musicOutlet;
 
 
 
@@ -26,5 +26,7 @@
 @property (nonatomic,strong) Settings *settings;
 @property (nonatomic,strong) Medals *medals;
 
+
+@property BOOL music;
 
 @end

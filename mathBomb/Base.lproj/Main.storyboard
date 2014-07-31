@@ -256,13 +256,6 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygi-a8-KWb">
-                                <rect key="frame" x="69" y="355" width="183" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 8888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2d-0o-Haf">
                                 <rect key="frame" x="69" y="388" width="183" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -308,6 +301,16 @@
                                 <rect key="frame" x="20" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eaj-zu-lp1">
+                                <rect key="frame" x="136" y="317" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Music">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="musicTapped:" destination="Xp9-0I-OFP" eventType="touchUpInside" id="E8E-cY-jJe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -320,12 +323,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="level" destination="Ygi-a8-KWb" id="sPz-8P-fLA"/>
                         <outlet property="medal1" destination="hS1-Vn-FNh" id="Usu-xy-wKq"/>
                         <outlet property="medal2" destination="sm1-6u-65Q" id="7sy-LZ-Kzn"/>
                         <outlet property="medal3" destination="I2W-Wq-tGZ" id="Jug-JP-bCt"/>
                         <outlet property="medal4" destination="XTd-pl-CBV" id="5pb-Aa-ltc"/>
                         <outlet property="medal5" destination="v9i-GI-XCp" id="GZW-r8-bzT"/>
+                        <outlet property="musicOutlet" destination="Eaj-zu-lp1" id="Jsd-2k-k4Z"/>
                         <outlet property="score" destination="I2d-0o-Haf" id="ffg-Sh-r85"/>
                     </connections>
                 </viewController>
@@ -353,6 +356,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Music" width="48" height="48"/>
         <image name="boom7" width="128" height="128"/>
         <image name="icon_x" width="11" height="11"/>
     </resources>

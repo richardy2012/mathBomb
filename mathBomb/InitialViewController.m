@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 
+
 @interface InitialViewController ()
 
 @end
@@ -16,8 +17,9 @@
 @implementation InitialViewController
 
 @synthesize game,settings;
-@synthesize level,score;
+@synthesize score;
 @synthesize medal1,medal2,medal3,medal4,medal5,medals;
+@synthesize musicOutlet,music;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,13 +33,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // music outlet
+    self.musicOutlet.alpha=1;
+    self.music=YES;
+    
     // game & settings
     self.settings=[[Settings alloc]init];
     self.game=[[Game alloc]init];
     self.medals=[[Medals alloc]init];
-    
-    // Level will be available in future versions
-    self.level.hidden=YES;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -45,12 +50,24 @@
     [self.navigationController.navigationBar setHidden:YES];
     // Load Game Level & Score
     self.game=[self.settings getGame];
-    self.level.text=[NSString stringWithFormat:@"Level: %d",self.game.level];
     self.score.text=[NSString stringWithFormat:@"Score: %d",self.game.score];
     // Uptade medals
     [self displayMedalsWithScore:self.game.score];
 
 }
+
+#pragma mark - UI Actions
+- (IBAction)musicTapped:(id)sender {
+    if (self.music) {
+        self.musicOutlet.alpha=0.30f;
+        self.music=NO;
+    } else {
+        self.musicOutlet.alpha=1;
+        self.music=YES;
+    }
+}
+
+
 
 #pragma mark - Working Methods
 -(void)displayMedalsWithScore:(int)score
@@ -100,15 +117,14 @@
     return YES;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+#pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"startGame"]) {
+        [segue.destinationViewController setMusic:self.music];
+    }
 }
-*/
+
 
 @end

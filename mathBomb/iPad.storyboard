@@ -84,6 +84,16 @@
                                 <rect key="frame" x="210" y="0.0" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiV-58-raq">
+                                <rect key="frame" x="360" y="602" width="48" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Music">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="musicTapped:" destination="DzC-h2-k9a" eventType="touchUpInside" id="9p6-JN-TxM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -96,6 +106,7 @@
                         <outlet property="medal3" destination="iOT-MX-eL6" id="s0k-1g-Z7R"/>
                         <outlet property="medal4" destination="MSD-Lu-BbP" id="MYJ-Eb-q6P"/>
                         <outlet property="medal5" destination="PT4-TH-b4H" id="hI4-v3-GBF"/>
+                        <outlet property="musicOutlet" destination="jiV-58-raq" id="qvA-s1-N6f"/>
                         <outlet property="score" destination="Icr-Pw-0nr" id="Yxz-o1-u8T"/>
                     </connections>
                 </viewController>
@@ -302,6 +313,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Music" width="48" height="48"/>
         <image name="boom7.png" width="128" height="128"/>
         <image name="icon_x" width="11" height="11"/>
     </resources>

@@ -63,5 +63,7 @@
 // Answers to be shown & unique
 @property (nonatomic,strong) NSMutableArray *answers;
 
+// Parameter from Initial View Controller
+@property BOOL music;
 
 @end
