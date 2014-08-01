@@ -341,7 +341,7 @@
         result=q1+q2;
     } else if (randomNumber==1) {
         self.mathOperator.text=@"-";
-        if (q1<q2 && (self.game.level==1 || self.game.level==2 || self.game.level==3)) {
+        if (q1<q2) {
             self.question1.text=[NSString stringWithFormat:@"%d",q2];
             self.question2.text=[NSString stringWithFormat:@"%d",q1];
             result=q2-q1;
@@ -353,7 +353,7 @@
         result=q1*q2;
     } else if (randomNumber==3) {
         self.mathOperator.text=@"/";
-        if (q1<q2 && (self.game.level==1 || self.game.level==2 || self.game.level==3)) {
+        if (q1<q2) {
             self.question1.text=[NSString stringWithFormat:@"%d",q2];
             self.question2.text=[NSString stringWithFormat:@"%d",q1];
             result=q2/q1;
